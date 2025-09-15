@@ -1,0 +1,104 @@
+# 网站基本信息
+site_name: 我的个人笔记
+site_description: 记录学习与思考的个人笔记
+site_author: KHW
+#site_url: https://notes.example.com  # 替换为你的网站URL
+
+# 文档源目录和输出目录
+docs_dir: docs
+site_dir: site
+
+# 版本控制
+repo_name: konghw-git/Algorithm-Notes  # GitHub仓库名称
+repo_url: https://github.com/konghw-git/Algorithm-Notes.git  # 仓库URL
+edit_uri: edit/main/docs/  # 允许在GitHub上编辑文档的链接
+
+# 配置主题 - 关键修改：移除顶部导航标签，保留侧边栏导航
+theme:
+  name: material  # 使用Material主题
+  language: zh  # 界面语言设置为中文
+  icon:
+    logo: material/book-open-page-variant  # 网站logo
+  favicon: assets/favicon.ico  # 网站图标
+  features:
+    # 移除 navigation.tabs（顶部导航标签），保留侧边栏相关功能
+    - navigation.sections  # 导航分区
+    - navigation.expand  # 自动展开导航
+    - navigation.indexes  # 索引页面
+    - search.suggest  # 搜索建议
+    - search.highlight  # 搜索结果高亮
+    - content.code.copy  # 代码块复制按钮
+    # 新增侧边栏相关增强功能
+    - navigation.instant  # 即时导航（无刷新切换页面）
+    - navigation.tracking  # 跟踪导航位置
+  palette:
+    # 浅色主题
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue  # 主色调
+      accent: indigo  # 强调色
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到深色模式
+    # 深色主题
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换到浅色模式
+
+# 扩展Markdown语法
+markdown_extensions:
+  - abbr  # 缩写支持
+  - admonition  # 提示框
+  - attr_list  # 属性列表
+  - def_list  # 定义列表
+  - footnotes  # 脚注
+  - md_in_html  # HTML中嵌入Markdown
+  - toc:
+      permalink: true  # 目录永久链接
+  - pymdownx.arithmatex:  # 数学公式
+      generic: true
+  - pymdownx.betterem:  # 增强的强调语法
+      smart_enable: all
+  - pymdownx.highlight:  # 代码高亮
+      linenums: true  # 显示行号
+  - pymdownx.superfences  # 超级 fences，支持代码块嵌套
+  - pymdownx.tabbed:  # 标签页
+      alternate_style: true
+  - pymdownx.tasklist:  # 任务列表
+      custom_checkbox: true
+
+# 插件配置
+plugins:
+  - search:  # 搜索插件
+      lang:
+        - zh
+        - en
+  - git-revision-date-localized:  # 显示最后修改时间
+      type: date
+  - awesome-pages:  # 自动生成导航的核心插件
+      collapse_single_pages: false  # 不折叠只有一个页面的文件夹
+      order: asc
+  - mkdocs-video:  # 视频支持
+      is_video: True
+  - mermaid2:  # 流程图支持
+      version: 9.1.3
+
+# 额外的CSS和JavaScript
+extra_css:
+  - assets/css/custom.css  # 自定义CSS
+
+extra_javascript:
+  - assets/js/custom.js  # 自定义JavaScript
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js  # 数学公式渲染
+
+# 额外的上下文数据
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/konghw-git  # 已更新为你的GitHub账号
+#    - icon: fontawesome/brands/linkedin
+#      link: https://linkedin.com/in/yourusername

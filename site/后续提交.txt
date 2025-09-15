@@ -1,0 +1,20 @@
+# 常用指令
+git init
+# 设置用户名（替换为你的 GitHub 用户名）
+git config --global user.name "Your GitHub Username"
+# 设置邮箱（替换为你的 GitHub 注册邮箱）
+git config --global user.email "your_email@example.com"
+# 克隆仓库
+git clone https://github.com/yourusername/yourrepository.git
+# 远程连接
+git remote add origin https://github.com/yourusername/yourrepository.git
+
+
+# 添加修改的文件
+git add .
+
+# 提交修改
+git commit -m "描述你的修改内容"
+
+# 推送到GitHub
+git push
